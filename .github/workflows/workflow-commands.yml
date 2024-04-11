@@ -20,6 +20,14 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
+  job-with-messages:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "::debug::A debug message"
+      - run: echo "::notice::A notice message"
+      - run: echo "::warning::A warningmessage"
+      - run: echo "::error::An error message"
+
   a-fail-job:
     runs-on: ubuntu-latest
     steps:
